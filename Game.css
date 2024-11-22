@@ -1,0 +1,130 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    color: #fff; /* Default text color for body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 1s; /* Fade-in animation */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideIn 0.5s; /* Slide-in animation */
+    position: relative; /* Position for the highlight effect */
+}
+
+/* Highlight effect */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 12px; /* Rounded corners for the highlight */
+    background: rgba(255, 215, 0, 0.5); /* Gold color with transparency */
+    z-index: -1; /* Place behind the container */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* Glow effect */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333; /* Darker color for headings */
+}
+
+p {
+    color: #2c3e50; /* Dark blue color for paragraphs */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+input[type="number"] {
+    padding: 10px;
+    width: 60%;
+    border: 2px solid #28a745; /* Green border */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="number"]:focus {
+    border-color: #2575fc; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white; /* Text color for buttons */
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Transition for background and transform */
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#msg {
+    margin: 15px 0;
+    font-weight: bold;
+    color: #e63946; /* Color for messages (red for errors) */
+}
+
+#attempt {
+    font-weight: bold;
+    color:black; /* Light color for attempts */
+}
+
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    animation: fadeIn 0.5s; /* Fade-in animation */
+}
+
+.overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
